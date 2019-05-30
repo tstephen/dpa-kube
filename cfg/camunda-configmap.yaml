@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: camunda-config
+  labels:
+    app: camunda
+data:
+  DB_CONN_MAXACTIVE: "3"
+  DB_CONN_MAXIDLE: "2"
+  DB_CONN_MINIDLE: "1"
+  DB_DRIVER: org.postgresql.Driver
+  DB_URL: jdbc:postgresql://192.168.99.106:30192/postgresdb
+  DB_USERNAME: postgresadmin
+  DB_PASSWORD: admin999
+  WAIT_FOR: 192.168.99.106:30192
