@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: flowable-admin
+spec:
+  selector:
+    app: flowable-admin
+  ports:
+  - protocol: TCP
+    port: 8080
+  type: NodePort

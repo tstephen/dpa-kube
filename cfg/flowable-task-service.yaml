@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: flowable-task
+spec:
+  selector:
+    app: flowable-task
+  ports:
+  - protocol: TCP
+    port: 8080
+  type: NodePort

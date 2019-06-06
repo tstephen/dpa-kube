@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flowable-rest
+spec:
+  selector:
+      matchLabels:
+        app: flowable-rest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flowable-rest
+    spec:
+      containers:
+        - name: flowable-rest
+          image: flowable/flowable-rest:latest
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: flowable-config

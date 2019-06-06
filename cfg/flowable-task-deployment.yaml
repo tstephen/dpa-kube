@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flowable-task
+spec:
+  selector:
+      matchLabels:
+        app: flowable-task
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flowable-task
+    spec:
+      containers:
+        - name: flowable-task
+          image: flowable/flowable-task:latest
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: flowable-config

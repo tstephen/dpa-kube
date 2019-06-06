@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flowable-admin
+spec:
+  selector:
+      matchLabels:
+        app: flowable-admin
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flowable-admin
+    spec:
+      containers:
+        - name: flowable-admin
+          image: flowable/flowable-admin:latest
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: flowable-config

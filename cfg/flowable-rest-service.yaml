@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: flowable-rest
+spec:
+  selector:
+    app: flowable-rest
+  ports:
+  - protocol: TCP
+    port: 8080
+  type: NodePort

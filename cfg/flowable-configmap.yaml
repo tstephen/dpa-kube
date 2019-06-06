@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: flowable-config
+  labels:
+    app: flowable
+data:
+    SERVER_PORT: "8080"
+    SPRING_DATASOURCE_DRIVER-CLASS-NAME: org.postgresql.Driver
+    SPRING_DATASOURCE_URL: jdbc:postgresql://192.168.99.108:30434/flowabledb
+    SPRING_DATASOURCE_USERNAME: flowable
+    SPRING_DATASOURCE_PASSWORD: flowable
+
+    FLOWABLE_REST_APP_ADMIN_USER-ID: rest-admin
+    FLOWABLE_REST_APP_ADMIN_PASSWORD: test
+    FLOWABLE_REST_APP_ADMIN_FIRST-NAME: Rest
+    FLOWABLE_REST_APP_ADMIN_LAST-NAME: Admin
+
+    # full url of the IDM app; used for server to server communication
+    FLOWABLE_COMMON_APP_IDM-URL: http://192.168.99.108:30276/flowable-idm
+    FLOWABLE_COMMON_APP_IDM-REDIRECT-URL: http://192.168.99.108:30276/flowable-idm
+    # IDM admin user (when running with default configuration: admin)
+    FLOWABLE_COMMON_APP_IDM-ADMIN_USER: admin
+    # IDM admin password (when running with default configuration: test)
+    FLOWABLE_COMMON_APP_IDM-ADMIN_PASSWORD: test
