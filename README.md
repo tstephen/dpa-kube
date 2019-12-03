@@ -8,7 +8,7 @@ The general approach is to give instructions for `minikube` and kubectl running 
 - To install minikube read [this](https://kubernetes.io/docs/tasks/tools/install-minikube/)
 - To install kubectl read [this](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
 
-Sensitive information such as passwords are in configmaps, take sure to change them!
+Sensitive information such as passwords are in configmaps, make sure to change them!
 
 Files
 -----
