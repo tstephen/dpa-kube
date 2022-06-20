@@ -127,6 +127,7 @@ If necessary, substitute your own service name and namespace for the highlighted
 12. Alternately....
 
     ```
+    helm add repo flowable https://flowable.org/helm/
     helm install --name f -f v.yaml flowable 
     ```
 

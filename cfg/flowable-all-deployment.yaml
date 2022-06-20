@@ -1,0 +1,24 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flowable-all
+spec:
+  selector:
+      matchLabels:
+        app: flowable-all
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: flowable-all
+    spec:
+      containers:
+        - name: flowable-all
+          image: flowable/all-in-one:latest
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: flowable-config

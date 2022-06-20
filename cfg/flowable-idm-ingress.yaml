@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: flowable-idm-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: flowable-idm.knowprocess.com
+    http:
+      paths:
+      - backend:
+          serviceName: flowable-idm
+          servicePort: 8080

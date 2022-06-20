@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: flowable-all-ingress
+  annotations:
+    kubernetes.io/ingress.class: nginx
+spec:
+  rules:
+  - host: flowfest.knowprocess.com
+    http:
+      paths:
+      - backend:
+          serviceName: flowable-all
+          servicePort: 8080
